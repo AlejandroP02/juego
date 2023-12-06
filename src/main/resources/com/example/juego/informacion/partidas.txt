@@ -1,0 +1,22 @@
+Partida
+Empate
+____________________
+Partida
+Ganador: maquina1
+Perdedor: maquina2
+____________________
+Partida
+Ganador: Alejandro
+Perdedor: maquina
+____________________
+Partida
+Ganador: Alejandro
+Perdedor: Kevin
+____________________
+Partida
+Ganador: Alejandro
+Perdedor: Kevin
+____________________
+Partida
+Empate
+____________________

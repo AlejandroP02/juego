@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<VBox maxHeight="500.0" maxWidth="700.0" minHeight="500.0" minWidth="700.0" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.juego.Controller">
+   <children>
+      <ToolBar>
+        <items>
+            <MenuBar cache="true" prefWidth="155.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#mostrarPopupLeerArchivo" text="Historial" />
+                    <MenuItem fx:id="close" mnemonicParsing="false" onAction="#salir" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Fondo">
+                           <graphic>
+                              <ColorPicker fx:id="fondoColorPicker" editable="true" onHiding="#colorTablero" />
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Player1">
+                           <graphic>
+                              <ColorPicker fx:id="player1ColorPicker" onHiding="#colorPlaye1" />
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Player2">
+                           <graphic>
+                              <ColorPicker fx:id="player2ColorPicker" onHiding="#colorPlaye2" />
+                           </graphic>
+                        </MenuItem>
+                     </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem fx:id="about" mnemonicParsing="false" onAction="#mostrarAboutPopup" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+        </items>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </ToolBar>
+      <SplitPane dividerPositions="0.6839464882943144" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-pref-height: 100000%;">
+        <items>
+          <AnchorPane>
+               <children>
+                  <GridPane id="tablero" fx:id="tabla" gridLinesVisible="true" layoutX="2.0" layoutY="-4.0" prefHeight="361.0" prefWidth="424.0" stylesheets="@css/table.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Circle id="pieza" fx:id="c14" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <Circle id="pieza" fx:id="c10" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <Circle id="pieza" fx:id="c02" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                        <Circle id="pieza" fx:id="c01" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                        <Circle id="pieza" fx:id="c11" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <Circle id="pieza" fx:id="c12" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <Circle id="pieza" fx:id="c21" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                        <Circle id="pieza" fx:id="c20" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                        <Circle id="pieza" fx:id="c22" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                        <Circle id="pieza" fx:id="c30" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                        <Circle id="pieza" fx:id="c31" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                        <Circle id="pieza" fx:id="c32" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                        <Circle id="pieza" fx:id="c13" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <Circle id="pieza" fx:id="c04" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.halignment="CENTER" />
+                        <Circle id="pieza" fx:id="c03" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
+                        <Circle id="pieza" fx:id="c23" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                        <Circle id="pieza" fx:id="c52" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                        <Circle id="pieza" fx:id="c51" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                        <Circle id="pieza" fx:id="c50" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                        <Circle id="pieza" fx:id="c41" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                        <Circle id="pieza" fx:id="c40" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                        <Circle id="pieza" fx:id="c43" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                        <Circle id="pieza" fx:id="c42" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                        <Circle id="pieza" fx:id="c33" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                        <Circle id="pieza" fx:id="c44" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                        <Circle id="pieza" fx:id="c34" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                        <Circle id="pieza" fx:id="c15" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <Circle id="pieza" fx:id="c24" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                        <Circle id="pieza" fx:id="c25" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                        <Circle id="pieza" fx:id="c05" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.halignment="CENTER" />
+                        <Circle id="pieza" fx:id="c35" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                        <Circle id="pieza" fx:id="c26" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                        <Circle id="pieza" fx:id="c16" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <Circle id="pieza" fx:id="c06" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.halignment="CENTER" />
+                        <Circle id="pieza" fx:id="c46" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                        <Circle id="pieza" fx:id="c45" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                        <Circle id="pieza" fx:id="c36" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                        <Circle id="pieza" fx:id="c56" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                        <Circle id="pieza" fx:id="c55" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                        <Circle id="pieza" fx:id="c54" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                        <Circle id="pieza" fx:id="c53" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                        <Circle id="pieza" fx:id="c00" fill="DODGERBLUE" radius="24.0" stroke="BLACK" strokeType="INSIDE" GridPane.halignment="CENTER" />
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <RadioButton fx:id="maquina_maquina" layoutX="14.0" layoutY="22.0" mnemonicParsing="false" selected="true" text="Máquina vs Máquina">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="mode" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="jugador_maquina" layoutX="14.0" layoutY="47.0" mnemonicParsing="false" onAction="#onJugadorMaquinaRadioButtonSelected" text="Jugador vs Máquina" toggleGroup="$mode" />
+                  <RadioButton fx:id="jugador_jugador" layoutX="14.0" layoutY="72.0" mnemonicParsing="false" onAction="#onJugadorJugadorRadioButtonSelected" text="Jugador vs Jugador" toggleGroup="$mode" />
+                  <Button fx:id="jugar" layoutX="84.0" layoutY="271.0" mnemonicParsing="false" onAction="#onJugarClicked" text="Jugar" />
+                  <Button fx:id="salir" layoutX="87.0" layoutY="331.0" mnemonicParsing="false" onAction="#salir" text="Salir" />
+                  <Button fx:id="reset" layoutX="83.0" layoutY="301.0" mnemonicParsing="false" onAction="#setReset" text="Reset" />
+                  <Label layoutX="63.0" layoutY="174.0" text="Turno:" />
+                  <Label fx:id="turno" layoutX="120.0" layoutY="174.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</VBox>

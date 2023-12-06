@@ -1,0 +1,6 @@
+#tablero{
+    -fx-background-color: #9900ff;
+}
+#tablero > Circle{
+  -fx-fill: white;
+}
